@@ -1,141 +1,136 @@
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --main-bg-color: #2a2a40;
-  --black: #000;
-  --dark-navy: #0a0a23;
-  --dark-grey: #d0d0d5;
-  --medium-grey: #dfdfe2;
-  --light-grey: #f5f6f7;
-  --peach: #f28373;
-  --salmon-color: #f0aea9;
-  --light-blue: #8bd9f6;
-  --light-orange: #f8b172;
-  --light-green: #93cb5b;
-  --golden-yellow: #f1ba33;
-  --gold: #f9aa23;
-  --green: #6bca6b;
-}
-
 body {
-  background-color: var(--main-bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #1c1c2c, #2a2a40);
+  color: #eee;
+  line-height: 1.6;
 }
 
+/* Header */
 nav {
-  background-color: var(--dark-navy);
-  padding: 10px 0;
+  background-color: #0a0a23;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .fcc-logo {
-  width: 210px;
+  width: 200px;
   display: block;
   margin: auto;
 }
 
 .title {
-  margin: 25px 0;
   text-align: center;
-  color: var(--light-grey);
+  color: #fff;
+  margin: 30px 0 20px;
+  font-size: 2rem;
 }
 
+/* Table Wrapper */
 .table-wrapper {
   padding: 0 25px;
   overflow-x: auto;
 }
 
+/* Table */
 table {
   width: 100%;
-  color: var(--dark-grey);
-  margin: auto;
-  table-layout: fixed;
   border-collapse: collapse;
-  overflow-x: scroll;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Table Headers */
+th {
+  text-align: left;
+  padding: 16px;
+  background-color: #2f2f47;
+  color: #f5f6f7;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #444;
 }
 
 #topics {
-  text-align: start;
   width: 60%;
 }
 
-th {
-  border-bottom: 2px solid var(--dark-grey);
-  padding-bottom: 10px;
-  font-size: 1.3rem;
+/* Table Rows */
+td {
+  padding: 18px 12px;
+  border-bottom: 1px solid #444;
+  vertical-align: middle;
 }
 
 td:not(:first-child) {
   text-align: center;
 }
 
-td {
-  border-bottom: 1px solid var(--dark-grey);
-  padding: 20px 0;
-}
-
+/* Title & Category */
 .post-title {
-  font-size: 1.2rem;
-  color: var(--medium-grey);
-  text-decoration: none;
-}
-
-.category {
-  padding: 3px;
-  color: var(--black);
-  text-decoration: none;
   display: block;
-  width: fit-content;
-  margin: 10px 0 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #8bd9f6;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
-.career {
-  background-color: var(--salmon-color);
+.post-title:hover {
+  color: #f1ba33;
 }
 
-.feedback,
-.html-css {
-  background-color: var(--light-blue);
+/* Category Labels */
+.category {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.support {
-  background-color: var(--light-orange);
-}
+/* Category Colors */
+.career         { background-color: #f0aea9; color: #000; }
+.feedback       { background-color: #8bd9f6; color: #000; }
+.html-css       { background-color: #8bd9f6; color: #000; }
+.support        { background-color: #f8b172; color: #000; }
+.general        { background-color: #93cb5b; color: #000; }
+.javascript     { background-color: #f1ba33; color: #000; }
+.backend        { background-color: #f9aa23; color: #000; }
+.python         { background-color: #6bca6b; color: #000; }
+.motivation     { background-color: #f28373; color: #000; }
 
-.general {
-  background-color: var(--light-green);
-}
-
-.javascript {
-  background-color: var(--golden-yellow);
-}
-
-.backend {
-  background-color: var(--gold);
-}
-
-.python {
-  background-color: var(--green);
-}
-
-.motivation {
-  background-color: var(--peach);
-}
-
+/* Avatars */
 .avatar-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .avatar-container img {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  transition: transform 0.3s ease;
 }
 
+.avatar-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
 @media (max-width: 750px) {
   .table-wrapper {
     padding: 0 15px;
@@ -146,10 +141,10 @@ td {
   }
 
   th {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .post-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
